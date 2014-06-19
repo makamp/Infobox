@@ -1,0 +1,173 @@
+﻿@using Infobox.Helpers
+@model Infobox.ViewModels.FilmViewModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Film</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Title)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Title)
+            @Html.ValidationMessageFor(model => model.Title)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.OriginalTitle)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.OriginalTitle)
+            @Html.ValidationMessageFor(model => model.OriginalTitle)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Slogan)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Slogan)
+            @Html.ValidationMessageFor(model => model.Slogan)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Description)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Description)
+            @Html.ValidationMessageFor(model => model.Description)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WorldReleaseDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.WorldReleaseDate)
+            @Html.ValidationMessageFor(model => model.WorldReleaseDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.RuReleaseDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.RuReleaseDate)
+            @Html.ValidationMessageFor(model => model.RuReleaseDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DVDReleaseDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DVDReleaseDate)
+            @Html.ValidationMessageFor(model => model.DVDReleaseDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BDReleaseDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.BDReleaseDate)
+            @Html.ValidationMessageFor(model => model.BDReleaseDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AgeLimit)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.AgeLimit)
+            @Html.ValidationMessageFor(model => model.AgeLimit)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Runtime)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Runtime)
+            @Html.ValidationMessageFor(model => model.Runtime)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Budget)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Budget)
+            @Html.ValidationMessageFor(model => model.Budget)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Marketing)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Marketing)
+            @Html.ValidationMessageFor(model => model.Marketing)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.USAFees)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.USAFees)
+            @Html.ValidationMessageFor(model => model.USAFees)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.RuFees)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.RuFees)
+            @Html.ValidationMessageFor(model => model.RuFees)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WorldFees)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.WorldFees)
+            @Html.ValidationMessageFor(model => model.WorldFees)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Rating)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Rating)
+            @Html.ValidationMessageFor(model => model.Rating)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Votes)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Votes)
+            @Html.ValidationMessageFor(model => model.Votes)
+        </div>
+        
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Genres)
+        </div>
+        <div class="editor-field">
+            @Html.CheckBoxListFor(model => model.SelectedGenres, Model.AvaliableGenres)
+        </div>
+        
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

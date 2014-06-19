@@ -1,0 +1,130 @@
+﻿@using Infobox.Helpers
+@model IEnumerable<Infobox.Models.Film>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create").If(User.IsInRole("Admin"))
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OriginalTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Slogan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WorldReleaseDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RuReleaseDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DVDReleaseDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BDReleaseDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AgeLimit)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Runtime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Budget)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Marketing)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USAFees)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RuFees)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WorldFees)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rating)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Votes)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OriginalTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Slogan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WorldReleaseDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RuReleaseDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DVDReleaseDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BDReleaseDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AgeLimit)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Runtime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Budget)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Marketing)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USAFees)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RuFees)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WorldFees)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rating)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Votes)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }).If(User.IsInRole("Admin")) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
